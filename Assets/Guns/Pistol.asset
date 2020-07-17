@@ -10,12 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afe16beefe66ff6419fd55591875c376, type: 3}
-  m_Name: Shotgun
+  m_Name: Pistol
   m_EditorClassIdentifier: 
-  displayName: Shotgun
-  gameSprite: {fileID: 21300000, guid: 2f12d685ca84a19408380174a2202901, type: 3}
-  projectile: {fileID: 0}
-  automatic: 0
-  fireRate: 2
-  projectileCount: 5
-  spread: 10
+  displayName: Pistol
+  gameSprite: {fileID: 21300000, guid: ba0509c34fa61b647ad50aed88db9c46, type: 3}
+  damage: 5
+  projectile: {fileID: 8140537155043003363, guid: 367ec669ecdebbc428c08a225f65f72b,
+    type: 3}
+  isAutomatic: 0
+  fireRate: 4
+  fixedSpread: 0
+  projectileCount: 1
+  spread: 0
