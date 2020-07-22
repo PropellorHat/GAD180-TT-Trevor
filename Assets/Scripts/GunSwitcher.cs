@@ -15,7 +15,6 @@ public class GunSwitcher : MonoBehaviour
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
-        gunSwitched.Invoke();
     }
 
     // Update is called once per frame

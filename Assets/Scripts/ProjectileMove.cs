@@ -7,6 +7,8 @@ public class ProjectileMove : MonoBehaviour
     private Rigidbody2D rb;
 
     public float speed;
+
+    public float damage;
     
     // Start is called before the first frame update
     void Start()
@@ -26,5 +28,19 @@ public class ProjectileMove : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if(collision.gameObject.tag == "NPC") //if it hits enemy npc
+        {
+            collision.gameObject.GetComponent<Health>().TakeDamage(damage);
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.tag == "Player") //if it hits player
+        {
+            collision.gameObject.GetComponent<Health>().TakeDamage(damage);
+            Destroy(gameObject);
+        }
+
     }
+    
 }
