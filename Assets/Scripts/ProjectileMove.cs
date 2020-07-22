@@ -26,5 +26,20 @@ public class ProjectileMove : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if(collision.gameObject.tag == "NPC") //if it hits enemy npc
+        {
+            Destroy(gameObject);
+        }
+        
     }
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if(collider.gameObject.tag == "FireBall")
+        {
+            Debug.Log("REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+            Destroy(gameObject);
+        }
+    }
+    
 }
