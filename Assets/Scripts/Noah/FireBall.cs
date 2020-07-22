@@ -29,12 +29,12 @@ public class FireBall : MonoBehaviour
            
             Destroy(gameObject);
         }
-         if (Collider.gameObject.tag == "Bullet")
+         /*if (Collider.gameObject.tag == "Bullet")
          {
 
 
              Destroy(gameObject);
-         }
+         }*/
         
       
 

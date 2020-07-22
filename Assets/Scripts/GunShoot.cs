@@ -17,6 +17,7 @@ public class GunShoot : MonoBehaviour
     {
         gunSwitcher = GetComponent<GunSwitcher>();
         sprite = GetComponent<SpriteRenderer>();
+        gunSwitcher.gunSwitched.Invoke();
     }
 
     // Update is called once per frame
@@ -48,6 +49,7 @@ public class GunShoot : MonoBehaviour
                     {
                         bul.transform.Rotate(0, 0, Random.Range(-currentGun.spread, currentGun.spread));
                     }
+                    bul.GetComponent<ProjectileMove>().damage = currentGun.damage;
                 }
                 nextTimeToFire = Time.time + 1f / currentGun.fireRate;
             }

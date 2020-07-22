@@ -8,51 +8,68 @@ using UnityEngine.Events;
 public class NpcCombat : MonoBehaviour
 {
 
-    private Rigidbody2D npc;
-    public Transform Player;
-    public float moveSpeed = 5f;
-    private Vector2 Movement;
-  
-    
-    
+    private Rigidbody2D rb;
+    public Transform target;
+    public float moveSpeed;
+    private Vector2 movement;
+
+    public GameObject trigger;
+
+    public Transform firePoint;
+    public GameObject FireBall;
+    float fireRate = 1f;
+    float nextFire = 1f;
+
+
+
 
     void Start()
     {
-        npc = this.GetComponent<Rigidbody2D>(); //get rigidbody2d and assign it to npc
+        rb = GetComponent<Rigidbody2D>(); //get rigidbody2d and assign it to npc
        
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (trigger.activeInHierarchy == true)
+        {
+            Combat();
+        }
     }
 
     public void Combat()
     {
-        Debug.Log("Combat begins");    //unity event starts this on trigger enter
         FindDistance();
-        moveCharacter(Movement);
-        //begin shooting
+        MoveCharacter(movement);
+        Shoot();
        
     }
     public void FindDistance()
     {
-        Vector3 direction = Player.position - transform.position;
+        Vector3 direction = target.position - transform.position;
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        npc.rotation = angle;
+        rb.rotation = angle;
         direction.Normalize();
-        Movement = direction;
-        Debug.Log("Movement found");
+        movement = direction;
     }
-    public void moveCharacter(Vector2 direction)
+    public void MoveCharacter(Vector2 direction)
     {
 
-        npc.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
-        Debug.Log("moved");
+        rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
 
     }
-  
+
+    public void Shoot()
+    {
+        if (Time.time > nextFire)
+        {
+            Instantiate(FireBall, firePoint.position, firePoint.rotation);
+            nextFire = Time.time + fireRate;
+
+        }
+    }
+
 }
 

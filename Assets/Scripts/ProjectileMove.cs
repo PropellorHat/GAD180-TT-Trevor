@@ -7,6 +7,8 @@ public class ProjectileMove : MonoBehaviour
     private Rigidbody2D rb;
 
     public float speed;
+
+    public float damage;
     
     // Start is called before the first frame update
     void Start()
@@ -29,17 +31,16 @@ public class ProjectileMove : MonoBehaviour
 
         if(collision.gameObject.tag == "NPC") //if it hits enemy npc
         {
+            collision.gameObject.GetComponent<Health>().TakeDamage(damage);
             Destroy(gameObject);
         }
-        
-    }
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        if(collider.gameObject.tag == "FireBall")
+
+        if (collision.gameObject.tag == "Player") //if it hits player
         {
-            Debug.Log("REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+            collision.gameObject.GetComponent<Health>().TakeDamage(damage);
             Destroy(gameObject);
         }
+
     }
     
 }
