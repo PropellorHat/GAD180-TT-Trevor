@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pistol
   m_EditorClassIdentifier: 
   displayName: Pistol
-  gameSprite: {fileID: 21300000, guid: ba0509c34fa61b647ad50aed88db9c46, type: 3}
+  gameSprite: {fileID: 21300000, guid: 201ac767b49c96645ba5c7f530c7d08e, type: 3}
   damage: 5
   projectile: {fileID: 8140537155043003363, guid: 367ec669ecdebbc428c08a225f65f72b,
     type: 3}

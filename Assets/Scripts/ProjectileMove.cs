@@ -19,7 +19,7 @@ public class ProjectileMove : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        rb.velocity = transform.up * speed;
+        rb.velocity = transform.right * speed;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

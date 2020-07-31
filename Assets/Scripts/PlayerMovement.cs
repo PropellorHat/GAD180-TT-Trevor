@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private Animator anim;
 
     public float moveSpeed;
     public float acceleration;
@@ -14,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -42,9 +44,18 @@ public class PlayerMovement : MonoBehaviour
         velocityChange.y = Mathf.Clamp(velocityChange.y, -acceleration, acceleration);
         rb.AddForce(velocityChange, ForceMode2D.Impulse);
 
+        if(rb.velocity.magnitude > 0f)
+        {
+            anim.SetBool("IsMoving", true);
+        }
+        else
+        {
+            anim.SetBool("IsMoving", false);
+        }
+
         //creates a vector from the player to the mouse;
         Vector2 lookDir = mousePos - rb.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         rb.rotation = angle;
     }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rifle
   m_EditorClassIdentifier: 
   displayName: Rifle
-  gameSprite: {fileID: 21300000, guid: c1da1f13f07d890439d8901b7b2969a8, type: 3}
+  gameSprite: {fileID: 21300000, guid: 73cf71b519142d0478f74e9a3b61f968, type: 3}
   damage: 3
   projectile: {fileID: 8140537155043003363, guid: 367ec669ecdebbc428c08a225f65f72b,
     type: 3}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shotgun
   m_EditorClassIdentifier: 
   displayName: Shotgun
-  gameSprite: {fileID: 21300000, guid: 2f12d685ca84a19408380174a2202901, type: 3}
+  gameSprite: {fileID: 21300000, guid: 63628e9bdc82f9a439b3874f19132be2, type: 3}
   damage: 5
   projectile: {fileID: 8140537155043003363, guid: 367ec669ecdebbc428c08a225f65f72b,
     type: 3}
