@@ -9,6 +9,7 @@ TagManager:
   - FireBall
   - Bullet
   - NPC
+  - WeaponPickup
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - PlayerProjectile
   - Enemy
   - EnemyProjectile
-  - 
+  - Pickups
   - 
   - 
   - 

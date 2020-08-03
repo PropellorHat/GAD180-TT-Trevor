@@ -13,7 +13,7 @@ public class CameraFollow : MonoBehaviour
     {
         cameraBox = GetComponent<BoxCollider2D>();
 
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        FindTarget();
     }
 
     // Update is called once per frame
@@ -29,5 +29,10 @@ public class CameraFollow : MonoBehaviour
             //give or take a margin of half the camera's box to compensate for the pivot being in the center
             transform.position = new Vector3(Mathf.Clamp(player.position.x, currentBoundry.bounds.min.x + cameraBox.size.x / 2, currentBoundry.bounds.max.x - cameraBox.size.x / 2), Mathf.Clamp(player.position.y, currentBoundry.bounds.min.y + cameraBox.size.y / 2, currentBoundry.bounds.max.y - cameraBox.size.y / 2), transform.position.z);
         }
+    }
+
+    public void FindTarget()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 }

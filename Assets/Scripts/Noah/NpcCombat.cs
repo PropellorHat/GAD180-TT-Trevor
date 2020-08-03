@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class NpcCombat : MonoBehaviour
 {
@@ -16,9 +13,10 @@ public class NpcCombat : MonoBehaviour
     public GameObject trigger;
 
     public Transform firePoint;
-    public GameObject FireBall;
-    float fireRate = 1f;
-    float nextFire = 1f;
+    public GameObject FireBall, chargeBall;
+    public float fireRate = 2f;
+    private float nextFire;
+    private bool canShoot = true;
 
 
 
@@ -26,7 +24,7 @@ public class NpcCombat : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>(); //get rigidbody2d and assign it to npc
-       
+        nextFire = Time.time + fireRate + Random.Range(-fireRate / 2, fireRate / 2);
     }
 
     // Update is called once per frame
@@ -42,8 +40,10 @@ public class NpcCombat : MonoBehaviour
     {
         FindDistance();
         MoveCharacter(movement);
-        Shoot();
-       
+        if(canShoot)
+        {
+            TestForShoot();
+        }
     }
     public void FindDistance()
     {
@@ -61,15 +61,24 @@ public class NpcCombat : MonoBehaviour
 
     }
 
-    public void Shoot()
+    public void TestForShoot()
     {
-        if (Time.time > nextFire)
+        if (Time.time >= nextFire)
         {
-            Instantiate(FireBall, firePoint.position, firePoint.rotation);
-            nextFire = Time.time + fireRate;
-
+            StartCoroutine(Shoot());
+            
         }
     }
 
+    public IEnumerator Shoot()
+    {
+        canShoot = false;
+        GameObject charge = Instantiate(chargeBall, firePoint);
+        yield return new WaitForSeconds(0.7f);
+        Destroy(charge);
+        Instantiate(FireBall, firePoint.position, firePoint.rotation);
+        nextFire = Time.time + fireRate + Random.Range(-fireRate / 2, fireRate / 2);
+        canShoot = true;
+    }
 }
 
