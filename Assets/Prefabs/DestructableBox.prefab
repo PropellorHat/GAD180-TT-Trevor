@@ -176,3 +176,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 40
   currentHealth: 0
+  hitEffect: {fileID: 1365273957072090665, guid: a343bb3d209b95e458cc05f732832d14,
+    type: 3}
