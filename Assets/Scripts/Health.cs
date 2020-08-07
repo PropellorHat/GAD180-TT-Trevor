@@ -21,6 +21,10 @@ public class Health : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if(currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
     }
 
     public void TakeDamage(float damage)

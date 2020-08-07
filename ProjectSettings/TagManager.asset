@@ -10,6 +10,7 @@ TagManager:
   - Bullet
   - NPC
   - WeaponPickup
+  - AmmoTick
   layers:
   - Default
   - TransparentFX

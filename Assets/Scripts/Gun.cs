@@ -18,12 +18,13 @@ public class Gun : ScriptableObject
     public float damage;
     [Tooltip("the prefab GameObject that is created when the gun fires")]
     public GameObject projectile;
-    [Tooltip("how many shots it takes before needing to reload. set to -1 if the gun has infinite ammo")]
-    public int clipSize;
+    [Tooltip("what percentage of the magazine will each shot consume")]
+    public float ammoCost;
     [Tooltip("set to true if the gun is automatic, false if semi")]
     public bool isAutomatic;
     [Tooltip("how many shots per second")]
     public float fireRate;
+    
 
     [Header("Spread")]
     [Tooltip("set to true if the gun's spread is NOT random")]
