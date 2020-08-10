@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 9
   m_Sprite: {fileID: 392201068057286467, guid: 8895ef53fb8ccf1418e17dc0417ce2b2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -233,6 +233,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 50
   currentHealth: 0
+  onHitEffect: {fileID: 2168757285402263218, guid: 37d2ccc665159ce4383081d1f39fee59,
+    type: 3}
 --- !u!1 &7903726220402905478
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,7 +306,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 8
   m_Sprite: {fileID: 1787130208946258228, guid: 081e877cff15a7846b7c04f09159d50c,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -64,6 +64,7 @@ public class GunShoot : MonoBehaviour
                     }
                     bul.GetComponent<ProjectileMove>().damage = currentGun.damage;
                 }
+                ScreenShake.Instance.StartShake(0.05f, 0.02f);
                 nextTimeToFire = Time.time + 1f / currentGun.fireRate;
                 currentMag -= currentGun.ammoCost;
             }
