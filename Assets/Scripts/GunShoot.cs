@@ -14,8 +14,10 @@ public class GunShoot : MonoBehaviour
     public float reloadTime;
     private bool isReloading;
     public float currentMag;
-
     public int currentAmmo;
+
+    public float rechargePause;
+    private Coroutine currentCoroutine = null;
 
     private SpriteRenderer sprite;
 
@@ -41,14 +43,14 @@ public class GunShoot : MonoBehaviour
             triggerDown = Input.GetKeyDown(KeyCode.Mouse0);
         }
 
-        if(Input.GetKeyDown(KeyCode.R) && !isReloading)
+        /*if(Input.GetKeyDown(KeyCode.R) && !isReloading)
         {
             StartCoroutine(Reload());
-        }
+        }*/
 
-        if(Time.time >= nextTimeToFire)
+        if(triggerDown)
         {
-            if(triggerDown && !isReloading && currentMag >= currentGun.ammoCost) 
+            if(Time.time >= nextTimeToFire && currentMag >= currentGun.ammoCost) 
             {
                 float spreadAngle = currentGun.spread / currentGun.projectileCount;
                 for (int i = 0; i < currentGun.projectileCount; i++)
@@ -64,16 +66,22 @@ public class GunShoot : MonoBehaviour
                     }
                     bul.GetComponent<ProjectileMove>().damage = currentGun.damage;
                 }
-                ScreenShake.Instance.StartShake(0.05f, 0.02f);
+                ScreenShake.Instance.StartShake(0.05f, 0.03f);
                 nextTimeToFire = Time.time + 1f / currentGun.fireRate;
                 currentMag -= currentGun.ammoCost;
+                if(currentCoroutine != null)
+                {
+                    StopCoroutine(currentCoroutine);
+                }
+
+                currentCoroutine = StartCoroutine(Recharge());
             }
         }
 
-        if(currentMag <= 0f && !isReloading)
+        /*if(currentMag <= 0f && !isReloading)
         {
             StartCoroutine(Reload());
-        }
+        }*/
     }
 
     public void GunSwitched()
@@ -93,5 +101,16 @@ public class GunShoot : MonoBehaviour
             currentAmmo -= 1;
         }
         isReloading = false;
+    }
+
+    IEnumerator Recharge()
+    {
+
+        yield return new WaitForSeconds(rechargePause);
+        while (currentMag < 100f)
+        {
+            yield return new WaitForSeconds(reloadTime / 100f);
+            currentMag += 1f;
+        }
     }
 }

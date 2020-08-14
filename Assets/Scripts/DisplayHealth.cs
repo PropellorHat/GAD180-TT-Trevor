@@ -5,18 +5,18 @@ using UnityEngine.UI;
 
 public class DisplayHealth : MonoBehaviour
 {
-    private Text text;
+    private Slider slider;
     public Health displayedHealth;
     
     // Start is called before the first frame update
     void Start()
     {
-        text = GetComponent<Text>();
+        slider = GetComponent<Slider>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        text.text = "Health: " + displayedHealth.currentHealth.ToString("n0");
+        slider.value = displayedHealth.currentHealth / 100;
     }
 }
