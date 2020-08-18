@@ -50,7 +50,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 757aff5d8aa2b5444ac1e23c3b063789, type: 2}
+  - {fileID: 2100000, guid: 146abb1b4d0158040ace42fff921dad4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 7903726220399830300}
   - component: {fileID: 6382445176368866833}
   m_Layer: 10
-  m_Name: Wizard
+  m_Name: BossWizard
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,7 +153,7 @@ Transform:
   m_GameObject: {fileID: 7903726220399830311}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 16.03762, y: 2.340144, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 7903726220402905479}
   - {fileID: 1076667888069142398}
@@ -176,7 +176,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.45
+  m_Radius: 0.3
 --- !u!50 &7903726220399830297
 Rigidbody2D:
   serializedVersion: 4
@@ -211,14 +211,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  moveSpeed: 1
+  moveSpeed: 2
   trigger: {fileID: 0}
   firePoint: {fileID: 7903726220389808916}
   FireBall: {fileID: 1933250215693041979, guid: 97f8ef6abc7cadc4d96e7e9e6e9fb9b7,
     type: 3}
   chargeBall: {fileID: 1933250215693041979, guid: 053ecfb65924e5b40952d808543f56e5,
     type: 3}
-  fireRate: 2
+  fireRate: 1.5
 --- !u!114 &6382445176368866833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4348bdca44b055489e8c964242b6304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 150
   currentHealth: 0
   onHitEffect: {fileID: 2168757285402263218, guid: 37d2ccc665159ce4383081d1f39fee59,
     type: 3}
@@ -288,7 +288,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: df9bd2316ac69db4c820c9e3d15b16cb, type: 2}
+  - {fileID: 2100000, guid: 9568a50ebc8a5bb4ea91a842f66e191a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

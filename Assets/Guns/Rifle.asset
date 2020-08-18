@@ -15,7 +15,7 @@ MonoBehaviour:
   displayName: Rifle
   gameSprite: {fileID: 21300000, guid: ef32940748a1a3b499641239b9009ad9, type: 3}
   uiSprite: {fileID: 21300000, guid: a348c0125e55dcf48ae279163560ce9f, type: 3}
-  damage: 3
+  damage: 5
   projectile: {fileID: 8140537155043003363, guid: 367ec669ecdebbc428c08a225f65f72b,
     type: 3}
   ammoCost: 5

@@ -18,9 +18,9 @@ MonoBehaviour:
   damage: 5
   projectile: {fileID: 8140537155043003363, guid: 367ec669ecdebbc428c08a225f65f72b,
     type: 3}
-  ammoCost: 50
+  ammoCost: 25
   isAutomatic: 0
-  fireRate: 1.5
+  fireRate: 1
   fixedSpread: 1
   projectileCount: 4
   spread: 20

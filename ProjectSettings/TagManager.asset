@@ -11,6 +11,7 @@ TagManager:
   - NPC
   - WeaponPickup
   - AmmoTick
+  - Destructable
   layers:
   - Default
   - TransparentFX
@@ -25,7 +26,7 @@ TagManager:
   - Enemy
   - EnemyProjectile
   - Pickups
-  - 
+  - Destructable
   - 
   - 
   - 

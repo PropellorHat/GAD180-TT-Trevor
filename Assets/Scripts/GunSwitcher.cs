@@ -23,7 +23,7 @@ public class GunSwitcher : MonoBehaviour
         int previousGun = selectedGun;
 
         //handle the switching of weapons with the scroll wheel
-        if (Input.mouseScrollDelta.y > 0)
+        if (Input.mouseScrollDelta.y > 0 || Input.GetKeyDown(KeyCode.Q))
         {
             if(selectedGun >= avalableGuns.Count - 1)
             {
@@ -35,7 +35,7 @@ public class GunSwitcher : MonoBehaviour
             }
         }
 
-        if (Input.mouseScrollDelta.y < 0)
+        if (Input.mouseScrollDelta.y < 0 || Input.GetKeyDown(KeyCode.E))
         {
             if (selectedGun <= 0)
             {

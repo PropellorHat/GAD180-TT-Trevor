@@ -31,11 +31,17 @@ public class ProjectileMove : MonoBehaviour
 
         if(collision.gameObject.tag == "NPC") //if it hits enemy npc
         {
-            collision.gameObject.GetComponent<Health>().TakeDamage(damage);
+            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
             Destroy(gameObject);
         }
 
         if (collision.gameObject.tag == "Player") //if it hits player
+        {
+            collision.gameObject.GetComponent<Health>().TakeDamage(damage);
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.tag == "Destructable") //if it hits destructable
         {
             collision.gameObject.GetComponent<Health>().TakeDamage(damage);
             Destroy(gameObject);
