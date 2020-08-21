@@ -9,6 +9,9 @@ TagManager:
   - FireBall
   - Bullet
   - NPC
+  - WeaponPickup
+  - AmmoTick
+  - Destructable
   layers:
   - Default
   - TransparentFX
@@ -22,8 +25,8 @@ TagManager:
   - PlayerProjectile
   - Enemy
   - EnemyProjectile
-  - 
-  - 
+  - Pickups
+  - Destructable
   - 
   - 
   - 

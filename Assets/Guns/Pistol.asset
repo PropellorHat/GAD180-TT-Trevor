@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Pistol
   m_EditorClassIdentifier: 
   displayName: Pistol
-  gameSprite: {fileID: 21300000, guid: ba0509c34fa61b647ad50aed88db9c46, type: 3}
+  gameSprite: {fileID: 21300000, guid: 334c2bf7def4bc24194c7321bcdb3e5f, type: 3}
+  uiSprite: {fileID: 21300000, guid: edc679c69d9c6124e922d2a2e70271e7, type: 3}
   damage: 5
   projectile: {fileID: 8140537155043003363, guid: 367ec669ecdebbc428c08a225f65f72b,
     type: 3}
+  ammoCost: 10
   isAutomatic: 0
   fireRate: 4
   fixedSpread: 0

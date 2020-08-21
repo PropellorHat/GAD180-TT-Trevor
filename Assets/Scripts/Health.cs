@@ -7,6 +7,10 @@ public class Health : MonoBehaviour
 {
     public float maxHealth;
     public float currentHealth;
+
+    public GameObject onHitEffect;
+
+    public float shakeDuration, shakeMagnitude;
     
     // Start is called before the first frame update
     void Start()
@@ -19,7 +23,11 @@ public class Health : MonoBehaviour
     {
         if(currentHealth <= 0f)
         {
-            Destroy(gameObject);
+            OnDeath();
+        }
+        if(currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
         }
     }
 
@@ -27,5 +35,15 @@ public class Health : MonoBehaviour
     {
         currentHealth -= damage;
         Debug.Log(gameObject.name + " took " + damage + " damage");
+        if(onHitEffect != null)
+        {
+            Instantiate(onHitEffect, transform.position, transform.rotation);
+        }
+        ScreenShake.Instance.StartShake(shakeDuration, shakeMagnitude);
+    }
+
+    public virtual void OnDeath()
+    {
+        Destroy(gameObject);
     }
 }

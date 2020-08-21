@@ -3,20 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DisplayHealth : MonoBehaviour
+public class GunUI : MonoBehaviour
 {
-    private Text text;
-    public Health displayedHealth;
+    public Text nameText;
+    public Image gunImage;
+
+    public GunShoot gun;
     
     // Start is called before the first frame update
     void Start()
     {
-        text = GetComponent<Text>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        text.text = "Health: " + displayedHealth.currentHealth.ToString("n0");
+        nameText.text = gun.currentGun.displayName;
+        gunImage.sprite = gun.currentGun.uiSprite;
     }
 }
