@@ -12,6 +12,8 @@ TagManager:
   - WeaponPickup
   - AmmoTick
   - Destructable
+  - PlayerRange
+  - knightRange
   layers:
   - Default
   - TransparentFX
