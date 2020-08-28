@@ -7,6 +7,14 @@ public class SceneChange : MonoBehaviour
 {
     public void NextScene()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            NextScene();
+        }
     }
 }
