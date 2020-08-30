@@ -44,6 +44,6 @@ public class ScreenShake : MonoBehaviour
 
     public void StartShake(float duration, float magnitude)
     {
-        StartCoroutine(Shake(duration, magnitude));
+        //StartCoroutine(Shake(duration, magnitude));
     }
 }
