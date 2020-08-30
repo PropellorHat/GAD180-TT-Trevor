@@ -70,7 +70,7 @@ public class MeleeRange : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player") //if it hits enemy npc
         {
-            collision.gameObject.GetComponent<Health>().TakeDamage(damage);
+            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
             
         }
     }
