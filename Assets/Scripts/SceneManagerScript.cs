@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagerScript : MonoBehaviour
 {
+    public GameObject creditsObj;
+
     public void PlayGame()
     {
         SceneManager.LoadScene(1);
@@ -12,7 +14,7 @@ public class SceneManagerScript : MonoBehaviour
 
     public void Credits()
     {
-
+        creditsObj.SetActive(!creditsObj.activeInHierarchy);
     }
 
     public void QuitGame()
